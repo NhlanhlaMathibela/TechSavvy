@@ -1,0 +1,104 @@
+﻿<style>
+    .container {
+        background: url('~/background.jpg');
+        background-size: auto;
+    }
+
+
+
+    #icon {
+        margin-top: 20px;
+        font-size: 50px;
+        color: Green;
+    }
+
+
+        #icon:hover {
+            color: Blue;
+            font-size: 60px;
+        }
+
+    .card {
+        margin-bottom: 25px;
+    }
+
+</style>
+
+
+
+<h1 style="text-align:center"> PURCHASING EMPLOYEE DASHBOARD</h1>
+<hr />
+
+<body style="background-color: white">
+    <section>
+        <div class="row">
+
+            <div class="col-lg-4">
+                <div class="card" title="Manage Supplier" style="height:200px">
+
+                    <div class="card-body">
+                        <h2 style="text-align:center">Manage Suppliers</h2>
+                        <a asp-area="" asp-controller="Suppliers" asp-action="Index">
+                            <div style="text-align:center">
+                                <i class="fa-solid fa-truck-field-un"></i>
+                            </div>
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card" title="Manage Products" style="height:200px">
+
+                    <div class="card-body">
+                        <h2 style="text-align:center">Manage Products</h2>
+                        <a asp-area="" asp-controller="Product" asp-action="Index">
+                            <div style="text-align:center">
+                                <i id="icon" class="fa fa-calendar"></i>
+                            </div>
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card" title="Purchase Requests" style="height:200px">
+
+                    <div class="card-body">
+                        <h2 style="text-align:center">Purchase Requests</h2>
+                        <a asp-area="" asp-controller="PurchaseRequestDtl" asp-action="Index">
+                            <div style="text-align:center">
+                                <i class="fa-light fa-money-check-dollar-pen"></i>
+                            </div>
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card" style="height:200px">
+
+                    <div class="card-body">
+                        <h2 style="text-align:center">Purchase Orders</h2>
+                        <a asp-area="" asp-controller="Sponsor" asp-action="MyModules">
+                            <div style="text-align:center">
+                                <i class="fa-regular fa-file-invoice"></i>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </section>
+
+</body>

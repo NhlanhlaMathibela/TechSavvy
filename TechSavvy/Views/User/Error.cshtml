@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "Error";
+}
+<h4 class="text-center alert alert-danger alert-heading">Error !</h4>
+<hr />
+<div class="alert alert-danger alert-dismissible fade show">
+    <strong>Occured Occured !</strong>  @{
+        if (ViewBag.Error != null)
+        {
+            @ViewBag.Error
+        }           
+    }
+</div>

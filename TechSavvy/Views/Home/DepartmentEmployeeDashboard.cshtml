@@ -1,0 +1,77 @@
+﻿<style>
+    /*.container {
+        background: url('~/background.jpg');
+        background-size: auto;
+    }*/
+
+
+
+    #icon {
+        margin-top: 20px;
+        font-size: 50px;
+        color: Green;
+    }
+
+
+        #icon:hover {
+            color: Blue;
+            font-size: 60px;
+        }
+
+    .card {
+        margin-bottom: 25px;
+    }
+
+</style>
+
+
+
+<h1 style="text-align:center"> DEPARTMENT EMPLOYEE DASHBOARD</h1>
+<hr />
+
+
+
+<body class="container" style="background-color: white">
+    <section>
+        <div class="row">
+
+            <div class="col-lg-4">
+                <div class="card" title="View Products" style="height:200px">
+
+                    <div class="card-body">
+                        <h2 style="text-align:center">Products</h2>
+                        <a asp-area="" asp-controller="Product" asp-action="Index">
+                            <div style="text-align:center">
+                                <i class="fa-sharp fa-solid fa-bags-shopping"></i>
+                            </div>
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="card" title="Manage Puchase Requests" style="height:200px">
+
+                    <div class="card-body">
+                        <h2 style="text-align:center">Purchase Request</h2>
+                        <a asp-area="" asp-controller="PurchaseRequest" asp-action="Index">
+                            <div style="text-align:center">
+                                <i class="fa-solid fa-money-check-dollar-pen"></i>
+                            </div>
+                        </a>
+
+                    </div>
+
+                </div>
+            </div>                   
+                       
+
+        </div>
+
+    </section>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/js/all.min.js"></script>
+

@@ -1,0 +1,117 @@
+﻿@model TechSavvy.Models.Product
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class=" col-11 mx-auto pt-0">
+    <div class=" card">
+        <div class=" card-header bg-danger text-uppercase text=white">
+          <h4>Add a new product</h4>
+        </div>
+@*<div class="row">
+    <div class="col-md-4">*@
+        <div class=" card-body">
+        <form enctype="multipart/form-data" asp-action="Create">
+            <div class="row">
+              <div class="col-md-6">   
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="barCode" class="control-label"></label>
+                <input asp-for="barCode" class="form-control" />
+                <span asp-validation-for="barCode" class="text-danger"></span>
+            </div>
+            </div>
+            <div class=" col-md-6">
+            <div class="form-group">
+                <label asp-for="name" class="control-label"></label>
+                <input asp-for="name" class="form-control" />
+                <span asp-validation-for="name" class="text-danger"></span>
+            </div>
+            </div>
+            <div class=" col-md-6">
+                <div class="form-group">
+                    <label asp-for="description" class="control-label"></label>
+                    <input asp-for="description" class="form-control" />
+                    <span asp-validation-for="description" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class=" col-md-6">
+                @*<div class="form-group">
+                    <label asp-for="CategoryId" class="control-label"></label>
+                     <select asp-for="CategoryId" asp-items="ViewBag.CategoryId" name="CategoryId" class="form-control"  />
+                           
+                    foreach(var ct in ViewBag.Category)
+                            
+                    {
+                           <option> value= "@ct.Id">@ct.CategoryName</option>
+                            }
+                </div>*@
+                        
+            </div>
+            <div class=" col-md-6">
+                @*<div class="form-group">
+                    <label asp-for="SupplierId" class="control-label"></label>
+                    <select asp-for="SupplierId" asp-items="ViewBag.SupplierId" name="SupplierId" class="form-control" />
+
+                    @foreach (var ct in ViewBag.Category)
+
+                    {
+                            <option> value= "@ct.Id">@ct.CategoryName</option>
+                    }
+                </div>*@
+
+            </div>
+            <div class=" col-md-6">
+                <div class="form-group">
+                    <label asp-for="price" class="control-label"></label>
+                    <input asp-for="price" class="form-control" />
+                    <span asp-validation-for="price" class="text-danger"></span>
+                </div>
+            </div>
+             <div class=" col-md-6">
+            <div class="form-group">
+                <label asp-for ="FrontImage" class="control-label"></label>
+                <div class="custom-file">
+                    <input asp-for ="FrontImage" class=" custom-file-input" id=" FLFrontImage" 
+                    onchange="document.getElementById('FrontImagePrv').src= window.URL.createObjectURL(this.files[0])">
+                    <label class="custom-file-label" for="FLFrontImage"></label>
+                </div>
+             
+                <span asp-validation-for="FrontImage" class=" text=danger"></span>
+                <img id=" FrontImagePrv" src="~/images/noimage.png" alt="Logo Image" width="150" weight="150" style=" border:1px; margin-top:20px; margin-left:120px;" />
+            </div>
+             
+            <div class="form-group">
+                <div class="form-control">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                    <div>
+                        <a asp-action="Index" class="btn btn-primary">View Product List</a>
+                    </div>
+
+                </div>
+                
+            </div>
+            </div>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+
+<
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script type="text/javascript">
+        $(."custom-file-input").on("change",function()){
+            var fileName = $(this).val().Split("\\").pop();
+            $(this).siblings("custom-file-label").addClass("selected").html(fileName)
+        });
+        </script>
+}

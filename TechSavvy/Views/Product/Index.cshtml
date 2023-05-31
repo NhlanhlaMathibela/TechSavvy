@@ -1,0 +1,92 @@
+﻿@model IEnumerable<TechSavvy.Models.Product>
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+  <p>
+    <a asp-action="Create"class="btn btn-sm btn-outline-primary">Add new Products</a>
+   </p>
+    <table class="table">
+    <thead>
+        <tr>
+            <td>
+               
+            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.barCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.description)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.category)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+      @foreach (var item in Model) {
+        <tr>
+                <td>
+                    <img src="~/Images/@item.ImageUrl" style=" width:75px; height: 75px"/>
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.barCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.price)
+            </td>
+            @*<td>
+                
+            </td>*@
+            <td>
+             
+                <a asp-action="Edit" asp-route-id="@item.ProductId" class="btn btn-sm btn-info">Edit</a> 
+                
+                <a asp-action="Delete" asp-route-id="@item.ProductId" class="btn btn-sm btn-danger ml-1">Delete</a>
+              
+            </td>
+        
+        
+ 
+      </tr>
+      }
+
+         </tbody>
+   
+   
+
+    </table>
+
+<div class="form-group">
+    <div class="form-control">
+
+        <a class=" nav-link" href="javascript:window.print()" href="javascript:window.print()">
+            <button class=" btn btn-primary">print</button>
+        </a>
+        <a class="btn btn-primary" href="#" role="button">Back</a>
+
+    </div>
+        
+
+</div>
+
+
+

@@ -1,0 +1,66 @@
+﻿@model TechSavvy.ViewModels.PurchaseRequestDtlVM
+
+@{
+    
+}
+
+<form>
+    <div class="container">
+        <legend class="bg bg-info text-center rounded-pill">
+            Create Purchase Request
+        </legend>
+        <div class="row">
+            <div asp-validation-summary="ModelOnly"></div>
+            <div class="col-12">
+                <div class="form-group row form-floating">
+                    <div class="col-4">
+                        <label asp-for="RequestId" class="control-label"></label>
+                    </div>
+                    <div class="col-4">
+                        <label asp-for="ProductId" class="control-label"></label>
+                    </div>
+                </div>
+                <div class="form-group row form-floating">
+                    <div class="col-4">
+                        <select asp-for="RequestId" class="form-control" asp-items="ViewBag.RequestId"></select>
+                        <span asp-validation-for="RequestId" ></span>
+                    </div>
+                    <div class="col-4">
+                        <select asp-for="ProductId" class="form-control" asp-items="ViewBag.ProductId"></select>
+                        <span asp-validation-for="ProductId"></span>
+                    </div>
+                </div>
+                <div class="form-group row form-floating">
+                    <div class="col-4">
+                        <label asp-for="quantity" class="control-label"></label>
+                    </div>
+                    
+                </div>
+                <div class="form-group row form-floating">
+                    <div class="col-4">
+                        <input asp-for="quantity" type="text" class="form-control" />
+                        <span asp-validation-for="quantity" asp-items="quantity"></span>
+                    </div>
+                    
+                </div><br /><br />
+                <div class="form-group">
+                    <div class="col-8 offset-2 row">
+                        <div class="col">
+                            <input type="submit" class="btn btn-info w-75" value="Create" />
+
+                        </div>
+                        <div class="col">
+                            <a asp-action="Index" asp-controller="PurchaseRequestDtl">Back To List</a>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+</form>

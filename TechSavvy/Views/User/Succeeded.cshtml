@@ -1,0 +1,13 @@
+﻿@{
+    ViewData["Title"] = "success";
+}
+<h4 class="text-center alert alert-success alert-heading">success !</h4>
+<hr />
+<div class="alert alert-success alert-success fade show">
+    <strong>Request was successfull !</strong>  @{
+        if (ViewBag.Error != null)
+        {
+            @ViewBag.success
+        }
+    }
+</div>
